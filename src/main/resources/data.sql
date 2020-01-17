@@ -1,5 +1,5 @@
-INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('app-mobile', '{bcrypt}$2y$10$rniIefdFqvEImPjxbyb.gOseZS/w4HehNkE4TI5p0rAhTxWf8Dj2K', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
-INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('tc', '{bcrypt}$2y$10$/B07JwBK8QvteoLI6ovA4OUROWw3OWrGSsFyOCmrPihNYgRIw00VG', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('app-mobile', '{bcrypt}$2y$10$a79TfSe3l9rsGqEJMxstFOyCo/49P1fwPmlvhWBbS8Fgr8COlg0PW', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'client_credentials,password,refresh_token', '{}');
+INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('tc', '{bcrypt}$2y$10$.WtpvjJeu.exrCSabWhhcOhMa3mEPJTCLMQ9j7sFacJ6suMtySkZS', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'client_credentials,password,refresh_token', '{}');
 
 INSERT INTO PERMISSION (NAME) VALUES
  ('can_create'),
@@ -21,7 +21,7 @@ INSERT INTO PERMISSION_ROLE (PERMISSION_ID, ROLE_ID) VALUES
      (3,3),
      (4,3); /* delete -> admin */
      
-insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'jane-doe','{bcrypt}$2y$10$gbzSlBdOch0V4ePtMzRg2e1s.aukHccMoLfBtPJYKayLpXZ1YilvW', 'jane@mail.com', '1', '1', '1', '1');
+insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'jane-doe','{bcrypt}$2y$10$xCZF3WfYHXxw9LVuj/wWm.jp4AXm4bImdZtWcFGDfEo8s5ZEvWJ9us', 'jane@mail.com', '1', '1', '1', '1');
 insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('2', 'john-doe','{bcrypt}$2y$10$3qO2b9/onOhP3UW8LE9T7euvP4gWX4fqF.Gf7Z86NOnaVXf8CV3Au', 'john@mail.com', '1', '1', '1', '1');
 insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('3', 'judite','{bcrypt}$2y$10$MXXgXo51qxETRwhjBuLGOOlPaZgCslwwSqfRRm1zA7Pdro00/Oxpy', 'judite@mail.com', '1', '1', '1', '1');
 insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('4', 'chuck-norris','{bcrypt}$2y$10$xKQLivLpDXRqTHsYuNJVZemfp5P5rfZ5kFbvovxigESNWFH3mFYzy', 'chuck@mail.com', '1', '1', '1', '1');

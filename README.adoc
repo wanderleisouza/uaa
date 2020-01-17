@@ -1,0 +1,33 @@
+= User Authentication Authorization Service
+:toc:
+
+== Getting started 
+
+=== Enable Authorization Server
+
+	@SpringBootApplication
+	@EnableAuthorizationServer
+
+=== Application files
+
+see `application.yml`, `schema.sql` and `data.sql` files
+	      
+=== cURL test
+
+*Grant Type: client_credentials*
+
+	curl -s -X POST -u "app-mobile:app-mobile123" -d "grant_type=client_credentials" localhost:9191/oauth/token | pjson
+
+*Grant Type: password*  
+
+	curl -s -X POST -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/token?grant_type=password&username=jane-doe&password=jane-doe123&scope=READ' | pjson
+
+
+*Refresh Token*
+
+NOTE: There is no refresh token implementation in SUAA, please check the persistent database version of this service (UAA)
+
+*Check Token*
+
+	curl -s -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/check_token?token=ecc66471-0508-4855-adf4-4238559b0921' | pjson
+		

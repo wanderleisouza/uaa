@@ -11,7 +11,11 @@
 === Application files
 
 see `application.yml`, `schema.sql` and `data.sql` files
-	      
+	
+=== Before start project
+
+IMPORTANT: keep pushing authDBXX version in `application.yml` or rename `data.sql` to `data.txt`
+      
 === cURL test
 
 *Grant Type: client_credentials*
@@ -22,10 +26,9 @@ see `application.yml`, `schema.sql` and `data.sql` files
 
 	curl -s -X POST -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/token?grant_type=password&username=jane-doe&password=jane-doe123&scope=READ' | pjson
 
-
 *Refresh Token*
 
-NOTE: There is no refresh token implementation in SUAA, please check the persistent database version of this service (UAA)
+	curl -X POST -u "app-mobile:app-mobile123" -d "grant_type=refresh_token&refresh_token=438fa86b-9174-4ae6-a8fe-faa9981955f3" http://localhost:9191/oauth/token
 
 *Check Token*
 

@@ -14,7 +14,7 @@ see `application.yml`, `schema.sql` and `data.sql` files
 	
 === Before start project
 
-IMPORTANT: keep pushing authDBXX version in `application.yml` or rename `data.sql` to `data.txt`
+IMPORTANT: keep pushing authDBXX (XX = XX+1) version in `application.yml` *or* rename `data.sql` to `data.txt` after first script load
       
 === cURL test
 

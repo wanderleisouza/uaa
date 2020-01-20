@@ -22,10 +22,10 @@ INSERT INTO PERMISSION_ROLE (PERMISSION_ID, ROLE_ID) VALUES
      (3,3),
      (4,3); /* delete -> admin */
      
-insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('29bf7bc3-eb4e-432a-b192-1cdc3805ddab', 'jane-doe','{bcrypt}$2y$10$KJqQfEwLL3G.dcyMb0xZqeUKGv0cL0.NZN5DwVsNyRfa4Mjm/qYlS', 'jane@mail.com', '1', '1', '1', '1');
-insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('73552f16-8ad9-473a-ad05-aed5732b9258', 'john-doe','{bcrypt}$2y$10$3qO2b9/onOhP3UW8LE9T7euvP4gWX4fqF.Gf7Z86NOnaVXf8CV3Au', 'john@mail.com', '1', '1', '1', '1');
-insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('d0155af9-7add-44c6-bea5-4bccc1e939e1', 'judite','{bcrypt}$2y$10$MXXgXo51qxETRwhjBuLGOOlPaZgCslwwSqfRRm1zA7Pdro00/Oxpy', 'judite@mail.com', '1', '1', '1', '1');
-insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('da0f87c8-7c4e-4653-b87c-be7a95285937', 'chuck-norris','{bcrypt}$2y$10$xKQLivLpDXRqTHsYuNJVZemfp5P5rfZ5kFbvovxigESNWFH3mFYzy', 'chuck@mail.com', '1', '1', '1', '1');
+insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'jane-doe','{bcrypt}$2y$10$KJqQfEwLL3G.dcyMb0xZqeUKGv0cL0.NZN5DwVsNyRfa4Mjm/qYlS', 'jane@mail.com', '1', '1', '1', '1');
+insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('2', 'john-doe','{bcrypt}$2y$10$3qO2b9/onOhP3UW8LE9T7euvP4gWX4fqF.Gf7Z86NOnaVXf8CV3Au', 'john@mail.com', '1', '1', '1', '1');
+insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('3', 'judite','{bcrypt}$2y$10$MXXgXo51qxETRwhjBuLGOOlPaZgCslwwSqfRRm1zA7Pdro00/Oxpy', 'judite@mail.com', '1', '1', '1', '1');
+insert into user (id, username, password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('4', 'chuck-norris','{bcrypt}$2y$10$xKQLivLpDXRqTHsYuNJVZemfp5P5rfZ5kFbvovxigESNWFH3mFYzy', 'chuck@mail.com', '1', '1', '1', '1');
 
 INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
     VALUES

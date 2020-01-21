@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.domain.AuthUserDetail;
 import com.example.domain.User;
 import com.example.repository.UserDetailRepository;
 
@@ -26,7 +25,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username or password wrong"));
 
-        UserDetails userDetails = new AuthUserDetail(optionalUser.get());
+        UserDetails userDetails = new User(optionalUser.get());
         new AccountStatusUserDetailsChecker().check(userDetails);
         return userDetails;
     }

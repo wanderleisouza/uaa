@@ -2,12 +2,13 @@ server:
   port: 9191
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/authDB52?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/authDB55?createDatabaseIfNotExist=true
     username: root
     password: admin
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     initialization-mode: always
   jpa:
+    open-in-view: true
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

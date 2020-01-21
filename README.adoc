@@ -33,4 +33,19 @@ IMPORTANT: keep pushing authDBXX (XX = XX+1) version in `application.yml` *or* r
 *Check Token*
 
 	curl -s -u 'app-mobile:app-mobile123' 'localhost:9191/oauth/check_token?token=ecc66471-0508-4855-adf4-4238559b0921' | pjson
-		
+
+== Key Store File Generation 
+
+First we need to generate a KeyStore file. To do that execute the command bellow. The command will generate a file called jwt.jks which contains the Public and Private keys.
+
+	keytool -genkeypair -alias jwt -keyalg RSA -keypass password -keystore jwt.jks -storepass password
+
+It's recommended to migrate do PKCS12. To do that execute the following commnad: 
+
+	keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+	
+Now export the public key and copy the jwt.jks to the `resources folder`.
+
+	keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
+	
+Copy from (including) ----- BEGIN PUBLIC KEY ----- to (including) ----- END PUBLIC KEY ----- and save it in a file. You'll need this later in your resource servers.

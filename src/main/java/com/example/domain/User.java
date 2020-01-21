@@ -1,14 +1,30 @@
 package com.example.domain;
 
-import lombok.Data;
-import javax.persistence.*;
-import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import lombok.Data;
 
 @Entity
 @Table(name = "user")
 @Data
-public class User implements Serializable {
+public class User implements UserDetails {
 	
 	private static final long serialVersionUID = -1633820936795603760L;
 
@@ -47,8 +63,18 @@ public class User implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "role_user", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-            inverseJoinColumns = {
-                    @JoinColumn(name = "role_id", referencedColumnName = "id")})
+            inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "id") })
     private List<Role> roles;
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		var authorities = new HashSet<GrantedAuthority>();
+		roles.forEach(r -> {
+			authorities.add(new SimpleGrantedAuthority(r.getName()));
+			r.getPermissions().forEach(p -> { authorities.add(new SimpleGrantedAuthority(p.getName())); });
+		});
+
+		return authorities;
+	}
 
 }

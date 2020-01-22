@@ -2,7 +2,7 @@ server:
   port: 9191
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/authDB56?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/authDB57?createDatabaseIfNotExist=true
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -33,7 +33,8 @@ public class User implements UserDetails {
     public User(User user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
-        this.email = user.getEmail();
+        this.customerId = user.getCustomerId();
+        this.document = user.getDocument();
         this.enabled = user.isEnabled();
         this.accountNonExpired = user.isAccountNonExpired();
         this.credentialsNonExpired = user.isCredentialsNonExpired();
@@ -49,8 +50,10 @@ public class User implements UserDetails {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "email")
-    private String email;
+    @Column(name = "customerId")
+    private String customerId;    
+    @Column(name = "document")
+    private String document;
     @Column(name = "enabled")
     private boolean enabled;
     @Column(name = "accountNonExpired")

@@ -76,6 +76,16 @@ public class ControllerMockTests {
 				.andExpect(status().isOk());
 	}
 	
+	@Test
+	@WithMockUser(username = "app-mobile", password = "app-mobile123")
+	public void testRefreshToken() throws Exception {
+		generateAccessTokenAndRefreshToken();
+		mockMvc.perform(post("/oauth/token")
+				.param("grant_type", "refresh_token")
+				.param("refresh_token", refreshToken)
+				.contentType("application/json"))
+				.andExpect(status().isOk());
+	}	
 
 	
 

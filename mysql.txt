@@ -1,3 +1,21 @@
+brew doctor
+brew remove mysql
+brew install mysql
+
+//To Start Your MySQL Connection
 brew services start mysql
+sudo mysql.server start
+
 mysqladmin -u root password 'admin'
+
+//To Open Bash Terminal for Local Development
 mysql -u root -p
+
+
+----
+ln -s /Applications/MAMP/tmp/mysql/mysql.sock /tmp/mysql.sock
+
+----
+sudo chown -R _mysql:mysql /usr/local/var/mysql
+sudo mysql.server start
+

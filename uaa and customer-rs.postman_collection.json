@@ -1,0 +1,621 @@
+{
+	"info": {
+		"_postman_id": "d3285d62-3b39-4901-a0df-0359ba68d43f",
+		"name": "uaa and customer-rs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/GET Jane (no token)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET who Am I?",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicGF5bWVudCIsImN1c3RvbWVyIl0sInVzZXJfbmFtZSI6ImpvaG4tZG9lIiwic2NvcGUiOlsiUkVBRCIsIldSSVRFIl0sImV4cCI6MTU3OTY1NTA5MSwiYXV0aG9yaXRpZXMiOlsiY2FuX2NyZWF0ZSIsImNhbl9yZWFkIiwiUk9MRV9VU0VSIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiIxYzFiMDkxOC04MjhkLTRhNmItOWRhMi0wMTk5NGM0ZGRjYzgiLCJlbWFpbCI6ImpvaG5AbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.WHZLV1hX4kbN6FC93O-JLCv1jNOYzf98atYdSqWE7Wt8wur46BqsWOuhIk5tJ4fC6O_54QCTzrff6ZFl9WHrfAT5XIVFUjZQFidIWWfB0opgxE1Qd4EzmTftNXm9Jv5dvykeoDaGRfofxrg-WzaiqwJjevaY3oWdOpZGdVlYWjbBGS7kRA_qUvj5eu-uAqIdaqLSrjamgX22Pn15sk8H-uwlfLHRl9j9-4-zbonCCvTGZQgilKJKupe7e5J0jETGL88lg886GofhhxRLK1ht5nTzoY575415WkW820r4AiIKS3-i8O86Lij67h2nTPten6DkHGxzJXMacF_tsLgeqw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/whoAmI?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"whoAmI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET Jane (+Jane Token)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicGF5bWVudCIsImN1c3RvbWVyIl0sInVzZXJfbmFtZSI6ImphbmUtZG9lIiwic2NvcGUiOlsiUkVBRCIsIldSSVRFIl0sImV4cCI6MTU3OTY1Mzk4NiwiYXV0aG9yaXRpZXMiOlsiY2FuX2NyZWF0ZSIsImNhbl9yZWFkIiwiUk9MRV9VU0VSIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiJkZjI0OTBhYS0yZTIwLTRhMjYtOWYwNC1jNDU4NTlkNjAwOTgiLCJlbWFpbCI6ImphbmVAbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.T713boNd5-sMSDncWDoLq_KRNlPjWxKR51lMls5gr8NgEKSX5JYew6qDqpSZzMwuDuaBHp154NfA-Pbeoq00A7DErtTjoLdqcst0RkL_q5-q5SHH1hcUiIW-UlGFaT1K5nqdMn0zPEswquPxYIf291QHvsjgv-rgyBsq-fZaWfQ7KdKbDR-DUAMNxJyzcYb1MgZ0DaHVwNlo6FiAPrtKQa3H_W2iTOq3PLcFcT3ZyV9JGni7xeqW3hps_DVuq42dNagJ4GghURXZ7zUcKugVg_WBtcsnw3nqJqtmo6F8BhTrQzMIriXcrUSXJCZe1vQxwmbfuW4VVOUxgZOXB76UTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET security - John (+Jane Token)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicGF5bWVudCIsImN1c3RvbWVyIl0sInVzZXJfbmFtZSI6ImphbmUtZG9lIiwic2NvcGUiOlsiUkVBRCIsIldSSVRFIl0sImV4cCI6MTU3OTY1Mzk4NiwiYXV0aG9yaXRpZXMiOlsiY2FuX2NyZWF0ZSIsImNhbl9yZWFkIiwiUk9MRV9VU0VSIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiJkZjI0OTBhYS0yZTIwLTRhMjYtOWYwNC1jNDU4NTlkNjAwOTgiLCJlbWFpbCI6ImphbmVAbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.T713boNd5-sMSDncWDoLq_KRNlPjWxKR51lMls5gr8NgEKSX5JYew6qDqpSZzMwuDuaBHp154NfA-Pbeoq00A7DErtTjoLdqcst0RkL_q5-q5SHH1hcUiIW-UlGFaT1K5nqdMn0zPEswquPxYIf291QHvsjgv-rgyBsq-fZaWfQ7KdKbDR-DUAMNxJyzcYb1MgZ0DaHVwNlo6FiAPrtKQa3H_W2iTOq3PLcFcT3ZyV9JGni7xeqW3hps_DVuq42dNagJ4GghURXZ7zUcKugVg_WBtcsnw3nqJqtmo6F8BhTrQzMIriXcrUSXJCZe1vQxwmbfuW4VVOUxgZOXB76UTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/security/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"security",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for Jane Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=password&username=jane-doe&password=jane-doe123&scope=READ WRITE",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "jane-doe"
+						},
+						{
+							"key": "password",
+							"value": "jane-doe123"
+						},
+						{
+							"key": "scope",
+							"value": "READ WRITE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for John Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=password&username=john-doe&password=john-doe123&scope=READ WRITE",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "john-doe"
+						},
+						{
+							"key": "password",
+							"value": "john-doe123"
+						},
+						{
+							"key": "scope",
+							"value": "READ WRITE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for Judite Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=password&username=judite&password=judite123&scope=READ WRITE",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "judite"
+						},
+						{
+							"key": "password",
+							"value": "judite123"
+						},
+						{
+							"key": "scope",
+							"value": "READ WRITE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for chuck noris Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=password&username=chuck-norris&password=chuck-norris123&scope=READ WRITE",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "chuck-norris"
+						},
+						{
+							"key": "password",
+							"value": "chuck-norris123"
+						},
+						{
+							"key": "scope",
+							"value": "READ WRITE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET check_token (aud)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/check_token?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJleHAiOjE1ODM2OTgyNjMsImp0aSI6IjNlZTM1NTdlLTUzNDktNDg2ZS1iZjc0LWNlZWVkMmNjOTg3OCIsImNsaWVudF9pZCI6ImFwcC1tb2JpbGUifQ.g59WWH1QphnVH5HMnDDuQq9UnKm1KstvW_zlL3rLyyqIGSTQXSkEcfec0149D7VPWQ2CgvssacqtjWmwRemD1-v2LMkegcF0r50nIuxq-OuwThXjhRP2-b6XjuTg1xgEvCNumdBm67iGXvxRtuEm1Fjx3ESQZBmfGTd5bMLIsMjdQDbBi6W0RTs7j6ixoBQkTVhGS0vp3YdLkCe-67rPmck6OOh0CVcdRrRYbwhRwbWqTNonryng-USHu01pEo05cjXVXyQceax5tEofnp97o2ahJGqmbG50zixkgfpIpQe4DsLTXI6dfXVkWNwshwmCpj7GeqgTBdEHmVbEVU6iDw",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJleHAiOjE1ODM2OTgyNjMsImp0aSI6IjNlZTM1NTdlLTUzNDktNDg2ZS1iZjc0LWNlZWVkMmNjOTg3OCIsImNsaWVudF9pZCI6ImFwcC1tb2JpbGUifQ.g59WWH1QphnVH5HMnDDuQq9UnKm1KstvW_zlL3rLyyqIGSTQXSkEcfec0149D7VPWQ2CgvssacqtjWmwRemD1-v2LMkegcF0r50nIuxq-OuwThXjhRP2-b6XjuTg1xgEvCNumdBm67iGXvxRtuEm1Fjx3ESQZBmfGTd5bMLIsMjdQDbBi6W0RTs7j6ixoBQkTVhGS0vp3YdLkCe-67rPmck6OOh0CVcdRrRYbwhRwbWqTNonryng-USHu01pEo05cjXVXyQceax5tEofnp97o2ahJGqmbG50zixkgfpIpQe4DsLTXI6dfXVkWNwshwmCpj7GeqgTBdEHmVbEVU6iDw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET check_token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/check_token?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInVzZXJfbmFtZSI6ImNodWNrLW5vcnJpcyIsInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJkb2N1bWVudCI6Ijc4OTU1MDg1ODAwIiwiY3VzdG9tZXJJZCI6Ijc4OTMzNTYiLCJleHAiOjE1ODM3MjA2OTksImF1dGhvcml0aWVzIjpbImNhbl9jcmVhdGUiLCJjYW5fcmVhZCIsIlJPTEVfQURNSU4iLCJjYW5fZGVsZXRlIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI4ZDM4YmMyNy0zMjUzLTQ5MmYtYmMxZi1iYTg1YWY2YzI2NzgiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.OTBMldzeSDVrrcke-eFSOJrvxT1KDWBuzbgIbyPiIPYUgDd8GToqlQCasv8jowRIAN30aQwtdvX5apyr5SFIvLme5dNrIR7UN5cn586Y5OXc7hG-fp6OHHYiLxs3P_h4MBDgSV9A_qR4pluihAO1odyJsaNj7k5mPnsb_Vs6xcX30eCbOoI7l9bpL0_st3q1H-inK29FYzME73T89Dh-81I_5wm9JH9e4r8OLp_wJoOx_RVHhSc0D1bYoFnmA7cZctu6PUG8lQwLCBUSJiowk9sTODWbyvo73WPGWAyBazA2bUZHrTK2hegX1Ucc6ETha8AlWJ7qcU1qpnRAiAqrBw",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInVzZXJfbmFtZSI6ImNodWNrLW5vcnJpcyIsInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJkb2N1bWVudCI6Ijc4OTU1MDg1ODAwIiwiY3VzdG9tZXJJZCI6Ijc4OTMzNTYiLCJleHAiOjE1ODM3MjA2OTksImF1dGhvcml0aWVzIjpbImNhbl9jcmVhdGUiLCJjYW5fcmVhZCIsIlJPTEVfQURNSU4iLCJjYW5fZGVsZXRlIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI4ZDM4YmMyNy0zMjUzLTQ5MmYtYmMxZi1iYTg1YWY2YzI2NzgiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.OTBMldzeSDVrrcke-eFSOJrvxT1KDWBuzbgIbyPiIPYUgDd8GToqlQCasv8jowRIAN30aQwtdvX5apyr5SFIvLme5dNrIR7UN5cn586Y5OXc7hG-fp6OHHYiLxs3P_h4MBDgSV9A_qR4pluihAO1odyJsaNj7k5mPnsb_Vs6xcX30eCbOoI7l9bpL0_st3q1H-inK29FYzME73T89Dh-81I_5wm9JH9e4r8OLp_wJoOx_RVHhSc0D1bYoFnmA7cZctu6PUG8lQwLCBUSJiowk9sTODWbyvo73WPGWAyBazA2bUZHrTK2hegX1Ucc6ETha8AlWJ7qcU1qpnRAiAqrBw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for client credentials token (aud)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=client_credentials",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for client credentials token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "tc",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "tc123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=client_credentials",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST for refresh token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "app-mobile123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "app-mobile",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9191/oauth/token?grant_type=refresh_token&refresh_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicGF5bWVudCIsImN1c3RvbWVyIl0sInVzZXJfbmFtZSI6ImpvaG4tZG9lIiwic2NvcGUiOlsiUkVBRCIsIldSSVRFIl0sImRvY3VtZW50IjoiNDQ1NTUwODU4MDAiLCJhdGkiOiJkNWI2MmE5Yi0wNGM4LTRkMGMtYTc0Ny1lZjVlMTBjY2UyNzciLCJjdXN0b21lcklkIjoiMTIzMTIzMyIsImV4cCI6MTU4MzcwMjU1NiwiYXV0aG9yaXRpZXMiOlsiY2FuX2NyZWF0ZSIsImNhbl9yZWFkIiwiUk9MRV9VU0VSIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI5OWZmYjhmYi03ZTBlLTRkNjItOWMwMy01MGQ2OWExYWY3ZDQiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.tDWBEmtHXZLCWiXjeRel6_4pPxHZmsUQfw2BeXOnn7YgfaDZF4GOFg9KDKYVoR7Ij4nFIgr_GM29PxxwAk9daVnZIixN3_2mabL2wrQXpsMwHCLuoWb1gneCTY6Eb95DLi6c0PiE5-ptoY3xPUfiGXmiiLzpuToC_nr1-gzuaygme-eaSAP3h9r5X6H0VUG8_rxVbxIfn5byaHmn8KbQo1glTuEXnfywnWIA5WLpNY87CUoYdQjzih0oyuolGkRaBtejLZkkdF0Jk9nYo7aLyYRQ-R1otXu-7yCrl__wV8ECffOUqVIvFfsRFbq4G-EBTj6P2C1hLmvQpBPNIsh1wg",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicGF5bWVudCIsImN1c3RvbWVyIl0sInVzZXJfbmFtZSI6ImpvaG4tZG9lIiwic2NvcGUiOlsiUkVBRCIsIldSSVRFIl0sImRvY3VtZW50IjoiNDQ1NTUwODU4MDAiLCJhdGkiOiJkNWI2MmE5Yi0wNGM4LTRkMGMtYTc0Ny1lZjVlMTBjY2UyNzciLCJjdXN0b21lcklkIjoiMTIzMTIzMyIsImV4cCI6MTU4MzcwMjU1NiwiYXV0aG9yaXRpZXMiOlsiY2FuX2NyZWF0ZSIsImNhbl9yZWFkIiwiUk9MRV9VU0VSIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI5OWZmYjhmYi03ZTBlLTRkNjItOWMwMy01MGQ2OWExYWY3ZDQiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.tDWBEmtHXZLCWiXjeRel6_4pPxHZmsUQfw2BeXOnn7YgfaDZF4GOFg9KDKYVoR7Ij4nFIgr_GM29PxxwAk9daVnZIixN3_2mabL2wrQXpsMwHCLuoWb1gneCTY6Eb95DLi6c0PiE5-ptoY3xPUfiGXmiiLzpuToC_nr1-gzuaygme-eaSAP3h9r5X6H0VUG8_rxVbxIfn5byaHmn8KbQo1glTuEXnfywnWIA5WLpNY87CUoYdQjzih0oyuolGkRaBtejLZkkdF0Jk9nYo7aLyYRQ-R1otXu-7yCrl__wV8ECffOUqVIvFfsRFbq4G-EBTj6P2C1hLmvQpBPNIsh1wg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/POST resest password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJleHAiOjE1ODM3MDI2MzMsImp0aSI6IjMzYjVmODk2LTYzYjctNGI4OS1hMTM5LTM3MTI4MzM4NjJmNSIsImNsaWVudF9pZCI6ImFwcC1tb2JpbGUifQ.3oDH6TnefevQievG59BuPWT6wtXYZA7M5RCI8lGdukmVzJ8femTMhdXAug-Di2Y67PV2SEhJTtP_1lr16vecXJop6YPjVXdVaohqONH8ICsVZNGyL7haOwwsBReVWeyhYZzrv7EG2omeX7NyM9JF7ykjmVHciThfvjZlEIQoVMFptx9885KNOdtAmhpRXV2mSVxso0L6MRjoIEUFJm5t9m4mTotWFiM7affqve2uleMTIqdUwGJs-37gy-NjDj2rnbuOPpVrLxIL7qTQ2oovHWIeCOVyblZIlMdnCR3dkw6jK2NokDim5LMpURA-BfsozpXi2Cd7xTMMG3LgkjQkhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/users/dory-tang/reset/password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"users",
+						"dory-tang",
+						"reset",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET user_details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInVzZXJfbmFtZSI6ImNodWNrLW5vcnJpcyIsInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJkb2N1bWVudCI6Ijc4OTU1MDg1ODAwIiwiY3VzdG9tZXJJZCI6Ijc4OTMzNTYiLCJleHAiOjE1ODM3MTkzMDMsImF1dGhvcml0aWVzIjpbImNhbl9jcmVhdGUiLCJjYW5fcmVhZCIsIlJPTEVfQURNSU4iLCJjYW5fZGVsZXRlIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI1NDQ2OWVlMi1jMDBiLTRiM2ItOGIyMC00MTU4NjMyZDE4YWMiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.CUe54n6r-E2b-t6_jf8EdiwGlo6Ja2x95iPNAV4wP6cawJj3ddHyMqjqavuubMGQD2XHMcj59INW4hU41MHaPC8aaN-juiOpb8d5P-rVvcwv7drSpm5DwjMBCKvujUWwxhavobOxtjVxCXxQ_8vlvpTz42apzKqYdH6-QE35QnKV38QzTCX0tSj1Ewi3gTV0prqNgZ2jznj09IO821JVSbepPQxq5g0-MJlxwl6CPHMPvTY4fyKZw8ywgfg3CuCxQHcX_y1foLj5AuxhvX5z9RglY0MtR8I8xWyC07mKvXfoRgwLcVja0iLU4hRuwrD5AUAq9n0mxeRRIEjEOASAUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/users/chuck-norris",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"users",
+						"chuck-norris"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/GET client_details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWFhIl0sInVzZXJfbmFtZSI6ImNodWNrLW5vcnJpcyIsInNjb3BlIjpbIlJFQUQiLCJXUklURSJdLCJkb2N1bWVudCI6Ijc4OTU1MDg1ODAwIiwiY3VzdG9tZXJJZCI6Ijc4OTMzNTYiLCJleHAiOjE1ODM3MTkzMDMsImF1dGhvcml0aWVzIjpbImNhbl9jcmVhdGUiLCJjYW5fcmVhZCIsIlJPTEVfQURNSU4iLCJjYW5fZGVsZXRlIiwiY2FuX3VwZGF0ZSJdLCJqdGkiOiI1NDQ2OWVlMi1jMDBiLTRiM2ItOGIyMC00MTU4NjMyZDE4YWMiLCJjbGllbnRfaWQiOiJhcHAtbW9iaWxlIn0.CUe54n6r-E2b-t6_jf8EdiwGlo6Ja2x95iPNAV4wP6cawJj3ddHyMqjqavuubMGQD2XHMcj59INW4hU41MHaPC8aaN-juiOpb8d5P-rVvcwv7drSpm5DwjMBCKvujUWwxhavobOxtjVxCXxQ_8vlvpTz42apzKqYdH6-QE35QnKV38QzTCX0tSj1Ewi3gTV0prqNgZ2jznj09IO821JVSbepPQxq5g0-MJlxwl6CPHMPvTY4fyKZw8ywgfg3CuCxQHcX_y1foLj5AuxhvX5z9RglY0MtR8I8xWyC07mKvXfoRgwLcVja0iLU4hRuwrD5AUAq9n0mxeRRIEjEOASAUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/clients/tc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"clients",
+						"tc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

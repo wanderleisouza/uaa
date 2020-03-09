@@ -23,5 +23,15 @@ public class UserDetailService implements UserDetailsService {
 		new AccountStatusUserDetailsChecker().check(user);
 		return new User(user);
 	}
-
+	
+	
+	public User loadUserByUsernameStripPassword(String name) throws com.example.exception.UsernameNotFoundException {
+		var user = userDetailRepository.findByUsername(name)
+				.orElseThrow(() -> new com.example.exception.UsernameNotFoundException());
+		var wrapper = new User(user);
+		wrapper.setPassword("***");
+		wrapper.setShowAuthorities(false);	
+		return wrapper;
+	}
+	
 }

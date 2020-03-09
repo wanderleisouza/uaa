@@ -14,10 +14,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,6 +49,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Integer id;
 
     @Column(name = "username")
@@ -68,8 +74,18 @@ public class User implements UserDetails {
             inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "id") })
     private List<Role> roles;
 
-	@Override
+    @JsonIgnore
+    @Transient
+    private boolean showAuthorities = true; 
+    
+    @JsonInclude(Include.NON_NULL)
+    @Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+    	
+    	if (this.showAuthorities == false) {
+    		return null;
+    	}
+    	
 		var authorities = new HashSet<GrantedAuthority>();
 		roles.forEach(r -> {
 			authorities.add(new SimpleGrantedAuthority(r.getName()));

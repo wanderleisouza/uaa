@@ -8,7 +8,5 @@ import com.example.domain.User;
 
 @Repository
 public interface UserDetailRepository extends JpaRepository<User, Integer> {
-
 	Optional<User> findByUsername(String name);
-
 }

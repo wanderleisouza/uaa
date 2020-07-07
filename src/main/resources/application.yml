@@ -1,14 +1,25 @@
 server:
-  port: 9191
+  port: 9191      
+  
 spring:
+  cloud:
+    discovery:
+      client:
+        composite-indicator:
+          enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/authDB75?createDatabaseIfNotExist=true
-    username: root
-    password: admin
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    initialization-mode: always
+    url: jdbc:postgresql://user-uaa-test.XXXXXXX.sa-east-1.rds.amazonaws.com:5432/authentication
+    username: postgres
+    password: XXXXXXX
+    driver-class-name: org.postgresql.Driver
+    test-on-borrow: true    
   jpa:
     open-in-view: true
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+management:
+  endpoint:
+    health:
+      show-details: always
